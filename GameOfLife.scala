@@ -11,8 +11,8 @@ object GameOfLife {
     var board = Array.ofDim[Int](width, height)
 
     // Populate the board with 0 or 1 at random
-    for (i <- 0 to width - 1) {
-      for (j <- 0 to height - 1) {
+    for (i <- 0 until width) {
+      for (j <- 0 until height) {
         board(i)(j) = random.nextInt(2)
       }
     }
@@ -25,8 +25,8 @@ object GameOfLife {
   }
 
   def printBoard(board: Array[Array[Int]], width: Int, height: Int): Unit = {
-    for (i <- 0 to width - 1) {
-      for (j <- 0 to height - 1) {
+    for (i <- 0 until width) {
+      for (j <- 0 until height) {
         print(board(i)(j))
       }
       println()
@@ -36,8 +36,8 @@ object GameOfLife {
   def nextBoard(board: Array[Array[Int]], width: Int, height: Int): Array[Array[Int]] = {
     var nextBoard = Array.ofDim[Int](width, height)
 
-    for (i <- 0 to width - 1) {
-      for (j <- 0 to height - 1) {
+    for (i <- 0 until width) {
+      for (j <- 0 until height) {
         var aliveNeighbors = 0
         for (k <- -1 to 1) {
           for (l <- -1 to 1) {
